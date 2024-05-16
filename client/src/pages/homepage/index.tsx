@@ -19,7 +19,7 @@ export default function HomePage() {
             <div className="flex flex-wrap justify-evenly gap-y-10 gap-3 sm:mx-5 lg:mx-16 sm:my-5 lg:my-16">
                 {products.map((product) => {
                     return (
-                        <div className="w-[90%] sm:w-[40%] md:w-[30%] lg:w-[20%]">
+                        <div className="min-w-[300px] max-w-[500px] w-[90%] sm:w-[40%] md:w-[30%] lg:w-[40%] xl:w-[30%]">
                             <ProductCard product={product} />
                         </div>
                     )

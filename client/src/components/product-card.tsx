@@ -23,12 +23,14 @@ export default function ProductCard({ product }: { product: Product }) {
         })
     }
 
+    const truncatedDescription = product.description?.length > 250 ? `${product.description.substring(0, 250)}...` : product.description;
+
     return (
         <Card className="h-[500px] relative rounded shadow-lg text-center p-4">
             <img src={product.image} className="w-[100px] h-[100px] mx-auto" />
             <CardHeader>
                 <CardTitle>{product.title}</CardTitle>
-                <CardDescription>{product.description}</CardDescription>
+                <CardDescription title={product.description}>{truncatedDescription}</CardDescription>
             </CardHeader>
             <div className="absolute bottom-5 left-0 right-0 flex justify-center">
                 <Button onClick={addToCard} className="mx-auto">{`Add To Cart ${alreadyInCart ? `(${alreadyInCart})`: ''}`}</Button>
